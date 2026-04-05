@@ -1,0 +1,13 @@
+Python packages to be installed:
+1)Requests
+2)ddgs
+Commands to install them though pip installation in different operating systems.
+1)Windows:
+pip install requests
+pip install ddgs
+ 
+2)Mac / Linux:
+pip3 install requests
+pip3 install ddgs
+ 
+
