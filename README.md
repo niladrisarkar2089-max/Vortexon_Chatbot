@@ -16,7 +16,7 @@ Replace 1 with the index number of the desired source.
 ---
 
 ## Architecture
-
+```text
                         [ User Query ]
                                |
                                v
@@ -52,6 +52,7 @@ Replace 1 with the index number of the desired source.
                                v
                   [ Conversation History ]
                   ( Trimmed to last 3 turns )
+```
 
 ---
 
@@ -92,7 +93,7 @@ This chatbot runs inference locally using the Gemma 3 1B model via Ollama. No ex
 Without a dedicated GPU, inference runs entirely on the CPU:
 
 - Older or budget-class CPU : approximately 3 to 8 tokens per second
-- Modern CPU (based upon newre architechture) : approximately 8 to 20 tokens per second
+- Modern CPU (Intel i5/i7, AMD Ryzen 5/7 or higher) : approximately 8 to 20 tokens per second
 
 Each query invokes two sequential model calls — one for the judge and one for the answer — which increases total response latency compared to a single-call architecture.
 
@@ -102,3 +103,4 @@ Each query invokes two sequential model calls — one for the judge and one for 
 
 - Gemma 3 1B is a lightweight 1 billion parameter model. Due to its limited capacity, it has a relatively higher tendency to produce hallucinated or inaccurate outputs. Users are advised to verify responses against the cited sources.
 - Inference speed is significantly lower on CPU-only systems compared to GPU-accelerated hardware.
+- Web search results are limited to the top 3 DuckDuckGo results per query.
